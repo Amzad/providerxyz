@@ -1,0 +1,24 @@
+# housingxyz-provider :: docker
+
+## arguments
+ARG DOTNET_VERSION=2.2
+
+## stage - base
+FROM mcr.microsoft.com/dotnet/core/sdk:${DOTNET_VERSION} as base
+WORKDIR /aspnet
+COPY ./aspnet/*.sln ./
+COPY ./aspnet/**/*.csproj ./
+RUN dotnet restore
+
+## stage - build
+FROM base as publish
+COPY ./aspnet .
+RUN dotnet publish *.Service --configuration Release --no-restore --output /aspnet/dist
+
+## stage - deploy
+FROM mcr.microsoft.com/dotnet/core/aspnet:${DOTNET_VERSION} as deploy
+WORKDIR /api
+ENV ASPNETCORE_URLS=http://+:80
+EXPOSE 80
+COPY --from=publish /aspnet/dist ./
+CMD [ "dotnet", "*.Service.dll" ]
