@@ -13,6 +13,9 @@ dockerup*
 bin/
 obj/
 
+appsettings.*
+!appsettings.json
+
 ## jekyll
 .jekyll-cache/
 .sass-cache/
