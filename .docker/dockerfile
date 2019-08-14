@@ -3,15 +3,15 @@
 ## arguments
 ARG DOTNET_VERSION=2.2
 
-## stage - base
-FROM mcr.microsoft.com/dotnet/core/sdk:${DOTNET_VERSION} as base
+## stage - restore
+FROM mcr.microsoft.com/dotnet/core/sdk:${DOTNET_VERSION} as restore
 WORKDIR /aspnet
 COPY ./aspnet .
 RUN dotnet restore *.sln
 
 ## stage - publish
 FROM base as publish
-RUN dotnet publish **/*.Api.csproj --configuration Release --no-restore --output /aspnet/dist
+RUN dotnet publish */*.Api.csproj --configuration Release --no-restore --output /aspnet/dist
 
 ## stage - deploy
 FROM mcr.microsoft.com/dotnet/core/aspnet:${DOTNET_VERSION} as deploy
