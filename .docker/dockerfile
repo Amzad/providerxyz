@@ -10,7 +10,7 @@ COPY ./aspnet .
 RUN dotnet restore *.sln
 
 ## stage - publish
-FROM base as publish
+FROM restore as publish
 RUN dotnet publish */*.Api.csproj --configuration Release --no-restore --output /aspnet/dist
 
 ## stage - deploy
