@@ -1,5 +1,9 @@
 # housingxyz-provider :: readme
 
+[![build status](https://dev.azure.com/revaturexyz/arlington/_apis/build/status/revaturexyz.housingxyz-provider?branchName=master)](https://dev.azure.com/revaturexyz/arlington/_build/latest?definitionId=18&branchName=master)
+[![code analysis](https://sonarcloud.io/api/project_badges/measure?project=housingxyz-provider&metric=alert_status)](https://sonarcloud.io/dashboard?id=housingxyz-provider)
+[![code coverage](https://sonarcloud.io/api/project_badges/measure?project=housingxyz-provider&metric=coverage)](https://sonarcloud.io/dashboard?id=housingxyz-provider)
+
 the housing provider service
 
 ## maintainer
