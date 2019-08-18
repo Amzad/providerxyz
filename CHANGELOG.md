@@ -2,7 +2,7 @@
 
 ## 0.0.0
 
-### INITIAL RELEASE 🎉:: 2019-07-16 :: @fredbelotte
+### INITIAL RELEASE 🎉:: 2019-08-20 :: @fredbelotte
 
 read the [release note][release-note-url] for details
 
