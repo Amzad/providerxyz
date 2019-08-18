@@ -6,7 +6,7 @@ name: issue
 title: '[issue] write the summary line'
 ---
 
-## housingxyz-provider :: issue
+## providerxyz :: issue
 
 ### machine specification
 

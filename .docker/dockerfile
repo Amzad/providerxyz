@@ -1,4 +1,4 @@
-# housingxyz-provider :: docker
+# providerxyz :: docker
 
 ## arguments
 ARG DOTNET_VERSION=2.2

@@ -1,15 +1,15 @@
-# housingxyz-provider :: docker-compose
+# providerxyz :: docker-compose
 
 networks:
-  housingxyz_provider_localhost:
+  providerxyz_localhost:
 
 services:
   web:
     deploy:
       replicas: 1
-    image: housingxyz-provider
+    image: providerxyz
     networks:
-      - housingxyz_provider_localhost
+      - providerxyz_localhost
     ports:
       - 10080:80
       - 10443:443

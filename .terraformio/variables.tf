@@ -1,4 +1,4 @@
-# housingxyz-provider :: terraform-variables
+# providerxyz :: terraform-variables
 
 ## VARIABLES
 variable "app_service" {

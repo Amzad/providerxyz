@@ -1,4 +1,4 @@
-<!-- # housingxyz-provider :: pull-request -->
+<!-- # providerxyz :: pull-request -->
 
 # [story-summary-line], [story-id]
 
@@ -15,4 +15,4 @@
 
 this project is maintained under the terms of the [Contribution Guidelines][contribution-guidelines-url].
 
-[contribution-guidelines-url]: https://github.com/revaturexyz/housingxyz-provider/blob/master/.github/CONTRIBUTING.md 'CONTRIBUTION GUIDELINES'
+[contribution-guidelines-url]: https://github.com/revaturexyz/providerxyz/blob/master/.github/CONTRIBUTING.md 'CONTRIBUTION GUIDELINES'

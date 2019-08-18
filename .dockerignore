@@ -1,4 +1,4 @@
-# housingxyz-provider :: dockerignore
+# providerxyz :: dockerignore
 
 ## angular
 **/dist/

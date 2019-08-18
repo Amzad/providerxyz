@@ -1,4 +1,4 @@
-# housingxyz-provider :: terraform
+# providerxyz :: terraform
 
 ## BACKENDS
 terraform {
@@ -19,12 +19,12 @@ provider "cloudflare" {
 }
 
 ## RESOURCES
-resource "azurerm_app_service" "housingxyz_provider" {
-  app_service_plan_id = "${azurerm_app_service_plan.housingxyz_provider.id}"
+resource "azurerm_app_service" "providerxyz" {
+  app_service_plan_id = "${azurerm_app_service_plan.providerxyz.id}"
   https_only = "${var.app_service["https"]}"
-  location = "${azurerm_resource_group.housingxyz_provider.location}"
+  location = "${azurerm_resource_group.providerxyz.location}"
   name = "${var.app_service["name"]}"
-  resource_group_name = "${azurerm_resource_group.housingxyz_provider.name}"
+  resource_group_name = "${azurerm_resource_group.providerxyz.name}"
 
   app_settings = {
     "WEBSITES_ENABLE_APP_SERVICE_STORAGE" = "false"
@@ -36,19 +36,19 @@ resource "azurerm_app_service" "housingxyz_provider" {
   }
 }
 
-resource "azurerm_app_service_custom_hostname_binding" "housingxyz_provider" {
-  app_service_name = "${azurerm_app_service.housingxyz_provider.name}"
+resource "azurerm_app_service_custom_hostname_binding" "providerxyz" {
+  app_service_name = "${azurerm_app_service.providerxyz.name}"
   hostname = "${var.app_service_custom["hostname"]}"
-  resource_group_name = "${azurerm_resource_group.housingxyz_provider.name}"
+  resource_group_name = "${azurerm_resource_group.providerxyz.name}"
 
-  depends_on = ["cloudflare_record.housingxyz_provider"]
+  depends_on = ["cloudflare_record.providerxyz"]
 }
 
-resource "azurerm_app_service_plan" "housingxyz_provider" {
+resource "azurerm_app_service_plan" "providerxyz" {
   kind = "${var.app_service_plan["kind"]}"
-  location = "${azurerm_resource_group.housingxyz_provider.location}"
+  location = "${azurerm_resource_group.providerxyz.location}"
   name = "${var.app_service_plan["name"]}"
-  resource_group_name = "${azurerm_resource_group.housingxyz_provider.name}"
+  resource_group_name = "${azurerm_resource_group.providerxyz.name}"
   reserved = "${var.app_service_plan["reserved"]}"
 
   sku {
@@ -57,7 +57,7 @@ resource "azurerm_app_service_plan" "housingxyz_provider" {
   }
 }
 
-resource "azurerm_resource_group" "housingxyz_provider" {
+resource "azurerm_resource_group" "providerxyz" {
   name = "${var.resource_group["name"]}"
   location = "${var.resource_group["location"]}"
 
@@ -66,7 +66,7 @@ resource "azurerm_resource_group" "housingxyz_provider" {
   }
 }
 
-resource "cloudflare_record" "housingxyz_provider" {
+resource "cloudflare_record" "providerxyz" {
   domain = "${var.cloudflare_record["domain"]}"
   name = "${var.cloudflare_record["name"]}"
   proxied = "${var.cloudflare_record["proxied"]}"
