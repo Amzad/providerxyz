@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace HousingXyz.Provider.Api
+namespace Xyz.Provider.Api
 {
     public class Program
     {
